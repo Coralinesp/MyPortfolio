@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from "./components/navbar";
@@ -67,27 +68,29 @@ function App() {
         <div className="w-full flex flex-col px-6 sm:px-12 md:px-24 lg:px-48 min-h-[300px] sm:min-h-[400px] justify-start items-center text-center">
           <AnimatedSplitText onAnimationEnd={() => setShowButton(true)} />
   
-          {showButton && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="w-full flex justify-center mt-10"
-            >
+            {showButton && (
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative w-64 h-11 bg-gradient-to-r from-indigo-400 to-blue-600 rounded-[42px] overflow-hidden cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="w-full flex justify-center mt-10"
               >
-                <div className="absolute left-[4px] top-[3px] w-9 h-9 bg-white rounded-3xl overflow-hidden flex items-center justify-center">
-                  <ArrowUpRight className="text-blue-600 w-5 h-5" />
-                </div>
-                <div className="absolute left-[55px] top-[10px] text-white text-base font-semibold font-['Montserrat'] leading-tight">
-                  Know More About Me
-                </div>
+                <Link to="/about" className="relative w-64 h-11 rounded-[42px] overflow-hidden cursor-pointer">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full h-full bg-gradient-to-r from-indigo-400 to-blue-600 flex items-center"
+                  >
+                    <div className="ml-1 w-9 h-9 bg-white rounded-3xl flex items-center justify-center">
+                      <ArrowUpRight className="text-blue-600 w-5 h-5" />
+                    </div>
+                    <div className="ml-4 text-white text-base font-semibold font-['Montserrat'] leading-tight">
+                      Know More About Me
+                    </div>
+                  </motion.div>
+                </Link>
               </motion.div>
-            </motion.div>
-          )}
+            )}
         </div>
         {/*skills */}
         <div className='mb-28 sm:mb-48'> 

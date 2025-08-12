@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ProjectCard({
   title,
@@ -11,9 +12,18 @@ export default function ProjectCard({
   toolkit,
   link
 }) {
+  
 
   const bgColorOpacity = `${color}26`; // ~15%
   const bgColorHover = `${color}70`;   // ~44%
+   const isExternal = link.startsWith("http");
+
+  const linkContent = (
+    <>
+      View Details
+      <ArrowRight size={16} stroke={color} />
+    </>
+  );
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
@@ -65,29 +75,42 @@ export default function ProjectCard({
         </div>
 
         {/* Botón View Case Study */}
-        <div className="mt-6">
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-4 py-2 max-w-max transition-colors duration-300 ease-in-out"
-            style={{
-              border: `1.5px solid ${color}`,
-              color: color,
-              backgroundColor: bgColorOpacity,
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = bgColorHover;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = bgColorOpacity;
-            }}
-          >
-            View Details
-            <ArrowRight size={16} stroke={color} />
-          </a>
-        </div>
+    <div className="mt-6">
+            {isExternal ? (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-4 py-2 max-w-max transition-colors duration-300 ease-in-out"
+                style={{
+                  border: `1.5px solid ${color}`,
+                  color: color,
+                  backgroundColor: bgColorOpacity,
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = bgColorHover; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = bgColorOpacity; }}
+              >
+                {linkContent}
+              </a>
+            ) : (
+              <Link to={link} passHref>
+                <a
+                  className="inline-flex items-center gap-2 text-sm font-semibold rounded-full px-4 py-2 max-w-max transition-colors duration-300 ease-in-out"
+                  style={{
+                    border: `1.5px solid ${color}`,
+                    color: color,
+                    backgroundColor: bgColorOpacity,
+                    cursor: "pointer",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = bgColorHover; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = bgColorOpacity; }}
+                >
+                  {linkContent}
+                </a>
+              </Link>
+            )}
+          </div>
       </div>
     </div>
   );

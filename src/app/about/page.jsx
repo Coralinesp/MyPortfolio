@@ -58,7 +58,7 @@ export default function About() {
           {/* Resume Button */}
           <div className='flex gap-2'>
              <a
-            href="https://drive.google.com/file/d/1QkotErsEHBU_dhC4pzKbBhambIynHJ3u/view?usp=sharing"
+            href="https://drive.google.com/file/d/1ny2v_X2izvE4IQ45Ik6O7woCbufpNrao/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-20 bg-white/5 text-white text-sm px-6 py-2 rounded-[24px] outline outline-[1.5px] outline-neutral-200/20 hover:bg-white/10 transition-all duration-200"
@@ -66,7 +66,7 @@ export default function About() {
             Download Resume | ES
           </a>
            <a
-            href="https://drive.google.com/file/d/1dgnDVYm04ISZAL9wE8mmNoYNYbX_G89h/view?usp=sharing"
+            href="https://drive.google.com/file/d/19NE9FX1L1lhBtvPdnyx8TgrKfgnyd06N/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-20 bg-white/5 text-white text-sm px-6 py-2 rounded-[24px] outline outline-[1.5px] outline-neutral-200/20 hover:bg-white/10 transition-all duration-200"

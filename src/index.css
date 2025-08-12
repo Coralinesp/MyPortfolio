@@ -21,6 +21,9 @@
 body {
   @apply font-sans bg-background text-foreground;
 }
+html, body {
+  width: 100vw;
+}
 
 html, body {
   overflow-x: hidden;
