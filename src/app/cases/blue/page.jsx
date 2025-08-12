@@ -30,9 +30,9 @@ export default function Bluebreeze() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#040615] text-white">
+    <div className="flex flex-col min-h-screen bg-[#040615] text-white overflow-x-hidden overflow-y-auto">
       <Navbar />
-      <main className="w-full flex flex-col items-center justify-center gap-10 pt-32 pb-2 px-6 md:px-20 lg:px-40">
+     <main className="w-full  mx-auto flex flex-col items-center justify-center gap-6 md:gap-10 pt-32 pb-2 px-4 sm:px-6 md:px-10 lg:px-20">
         <h1 className="text-4xl font-bold text-center">
           {project?.title || 'Project not found'}
         </h1>
@@ -41,14 +41,14 @@ export default function Bluebreeze() {
           <img
             src={project.cover}
             alt={project.title}
-            className="w-full h-60 object-cover rounded-lg shadow-lg"
+            className="w-full h-48 sm:h-60 md:h-72 object-cover rounded-lg shadow-lg"
           />
         )}
 
-        <div className="flex flex-col md:flex-row w-full mt-8 gap-8">
+       <div className="flex flex-col md:flex-row w-full mt-8 gap-8"> 
           {/* Subnavbar lateral izquierdo */}
-          <nav className="md:w-1/4 w-full sticky top-32 self-start">
-            <ul className="flex md:flex-col gap-4 text-sm font-medium text-gray-300">
+            <nav className="md:w-1/4 w-full sticky top-16 sm:top-20 md:top-32 self-start overflow-x-auto md:overflow-visible bg-[#040615] md:bg-transparent z-10">
+              <ul className="flex md:flex-col gap-2 md:gap-4 text-sm font-medium text-gray-300 flex-wrap">
               {sections.map((section) => {
                 const isActive = activeSection === `#${section.id}`;
                 return (
@@ -69,7 +69,7 @@ export default function Bluebreeze() {
           </nav>
 
           {/* Contenido desplazable */}
-          <div className="md:w-3/4 w-full flex flex-col gap-12 overflow-y-auto max-h-[80vh] custom-scroll px-2 pb-2 scroll-smooth">
+         <div className="md:w-3/4 w-full flex flex-col gap-12 md:overflow-y-auto md:max-h-[80vh] custom-scroll scroll-smooth px-1">
             <section id="overview">
               <h2 className="text-3xl font-semibold mb-2 text-indigo-600">Overview</h2>
               <p className="text-base leading-relaxed">
