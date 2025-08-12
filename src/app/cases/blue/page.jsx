@@ -32,7 +32,7 @@ export default function Bluebreeze() {
   return (
     <div className="min-h-screen bg-[#040615] text-white">
       <Navbar />
-      <main className="w-full flex flex-col items-center justify-center gap-10 pt-32 pb-2 px-40">
+      <main className="w-full flex flex-col items-center justify-center gap-10 pt-32 pb-2 px-6 md:px-20 lg:px-40">
         <h1 className="text-4xl font-bold text-center">
           {project?.title || 'Project not found'}
         </h1>
